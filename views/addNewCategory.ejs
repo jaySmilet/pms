@@ -1,0 +1,33 @@
+<%- include('header') %>
+      <div class="row my-5">
+        <div class="col-md-4 offset-4">
+          <div class="my-3 py-2 text-white text-center bg-info">
+           Add New Password Category
+          </div>
+          <form action="/addNewCategory" class="form-horizontal" method="POST">
+            <div class="text-center text-danger">
+              <% if(errors !=''){ %>
+              <%= errors.passwordCategory.msg %>
+              <% } %>
+            </div>
+            <div class="text-center text-success">
+              <% if(success !=''){ %>
+              <%= success %>
+              <% } %>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="passwordCategory" placeholder="New Category">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Add Category</button>
+              </div>
+             
+            </div>
+            <p>Click here to <a href="/passwordCategory">View All Categories</a> !</p>
+          </form>
+        </div>
+          </div>
+          <%- include('footer') %>

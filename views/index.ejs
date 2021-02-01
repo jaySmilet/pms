@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css"
+    integrity="sha384-zFzXNZnkXgOSk/hRVQNKFU1ZqC9h18Ge1sp4XCwupvrh3zLMRHclbusmMKTznUnX" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="row">
+<div class="col-md-4 offset-4">
+  <h3 class="text-center text-danger py-2"><%= title %></h3>
+  <div class="my-3 py-2 text-white text-center bg-info">
+    Login
+  </div>
+  <div class="text-center text-success">
+    <% if(msg !=''){ %>
+    <%= msg %>
+    <% } %>
+  </div>
+  <form action="/" method="POST" class="form-horizontal">
+    <div class="form-group">
+      <div class="col-sm-10">
+        <input type="username" class="form-control" name="username" placeholder="@userename">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-10">
+        <input type="password" class="form-control" name="pwd" placeholder="password">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Login</button>
+        
+      </div>
+      
+    </div>
+    <p>Don't have account? <a href="/signup">SignUp</a> Now!</p>
+  </form>
+</div>
+  </div>
+  
+  <%- include('footer') %>
